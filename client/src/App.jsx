@@ -10,7 +10,7 @@ import InterviewHistory from './pages/InterviewHistory'
 import InterviewReport from './pages/InterviewReport'
 import Pricing from './pages/Pricing'
 
-export const serverURL = 'http://localhost:3000'
+export const serverURL = 'https://ai-interview-v1db.onrender.com'
 const App = () => {
   const dispatch = useDispatch()
   useEffect(() => {
