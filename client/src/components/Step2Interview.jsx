@@ -93,7 +93,6 @@ const Step2Interview = ({ interviewData, onFinish }) => {
         },
         { withCredentials: true },
       );
-      console.log(result.data);
       onFinish(result.data);
     } catch (error) {
       console.log("Error finishing interview:", error);
