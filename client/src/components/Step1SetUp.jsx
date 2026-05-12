@@ -42,7 +42,6 @@ const Step1SetUp = ({onStart}) => {
         formData.append("resume", resumeFile)
         try {
             const result = await axios.post(`${serverURL}/api/interview/resume`, formData, {withCredentials:true})
-            console.log(result.data)
             const detectedRole = result.data.role || "";
             setRole(detectedRole)
             const expArray = result.data.experience || [];
@@ -80,7 +79,6 @@ const Step1SetUp = ({onStart}) => {
                 username: userData?.name || "Candidate",
                 role, experience, mode, resumeText, projects, skills
             }, {withCredentials:true})
-            console.log(result.data);
             if(userData){
                 dispatch(setUserData({...userData, credits: result.data.creditsLeft}))
             }
