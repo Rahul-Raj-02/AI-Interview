@@ -67,7 +67,6 @@ const Pricing = () => {
         amount: amount,
         credits: plan.credits
        }, { withCredentials: true })
-       console.log(result.data)
        const options = {
         key: import.meta.env.VITE_RAZORPAY_KEY_ID,
         amount: result.data.amount,
@@ -76,7 +75,6 @@ const Pricing = () => {
         description: `${plan.name} - ${plan.credits} Credits`,
         order_id: result.data.id,
         handler: async function (response) {
-          console.log(response)
           const verifyPay = await axios.post(`${serverURL}/api/payment/verify`, response, { withCredentials: true })
           dispatch(setUserData(verifyPay.data.user))
           alert("Payment Successful 🎉 Credits added to your account.")
