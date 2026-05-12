@@ -52,7 +52,7 @@ const InterviewHistory = () => {
                         </div>
                         <div className='flex items-center gap-6'>
                             <div className='text-right'>
-                                <p className='text-xl font-bold text-cyan-600'>{item.finalScore || 0}/10</p>
+                                <p className='text-xl font-bold text-cyan-600'>{item.finalScore ? Number(item.finalScore).toFixed(1) : 0}/10</p>
                                 <p className='text-xs text-gray-400'>Overall Score</p>
                             </div>
 
