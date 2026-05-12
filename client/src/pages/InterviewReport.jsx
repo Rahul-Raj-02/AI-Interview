@@ -14,7 +14,6 @@ const InterviewReport = () => {
           `${serverURL}/api/interview/report/${id}`,
           { withCredentials: true },
         );
-        console.log(result.data);
         setReport(result.data);
       } catch (error) {
         console.log(error.message);
