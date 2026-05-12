@@ -11,7 +11,6 @@ const InterviewHistory = () => {
         const getMyInterviews = async () => {
             try {
                 const result = await axios.get(`${serverURL}/api/interview/get-interview`, {withCredentials:true})
-                console.log(result.data)
                 setInterviews(result.data)
             } catch (error) {
                 console.log(error.message)
