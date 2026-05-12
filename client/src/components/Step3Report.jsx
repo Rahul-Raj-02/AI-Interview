@@ -46,7 +46,7 @@ const Step3Report = ({ report }) => {
     performanceText = "Significant improvement required.";
     shortTagLine = "Work on clearity and confidence.";
   }
-  const score = finalScore || 0;
+  const score = finalScore ? Number(Number(finalScore).toFixed(1)) : 0;
   const percentage = (score / 10) * 100 || 0;
   const downloadPDF = () => {
     const doc = new jsPDF("p", "mm", "a4");
@@ -230,7 +230,7 @@ const Step3Report = ({ report }) => {
                   </div>
                   <div className="bg-gray-200 h-2 sm:h-3 rounded-full">
                     <div
-                      className="bg-cyan-500 h-fullrounded-full"
+                      className="bg-cyan-500 h-full rounded-full"
                       style={{ width: `${s.value * 10}%` }}
                     ></div>
                   </div>
@@ -291,7 +291,7 @@ const Step3Report = ({ report }) => {
                       </p>
                     </div>
                     <div className="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full font-bold text-xs sm:text-sm w-fit">
-                      {q.score ?? 0}/1
+                      {q.score ?? 0}/10
                     </div>
                   </div>
                   <div className="bg-cyan-50 border border-cyan-300 p-4 rounded-lg">
