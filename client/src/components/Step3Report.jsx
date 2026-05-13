@@ -71,7 +71,7 @@ const Step3Report = ({ report }) => {
     doc.roundedRect(margin, currentY, contentWidth, 20, 4, 4, "F");
     doc.setFontSize(14);
     doc.setTextColor(0, 0, 0);
-    doc.text(`Final Score: ${finalScore}/10`, pageWidth / 2, currentY + 12, {
+    doc.text(`Final Score: ${Number(finalScore).toFixed(1)}/10`, pageWidth / 2, currentY + 12, {
       align: "center",
     });
     currentY += 30;
@@ -79,9 +79,9 @@ const Step3Report = ({ report }) => {
     doc.setFillColor(249, 250, 251);
     doc.roundedRect(margin, currentY, contentWidth, 30, 4, 4, "F");
     doc.setFontSize(12);
-    doc.text(`Confidence: ${confidence}`, margin + 10, currentY + 10);
-    doc.text(`Communication: ${communication}`, margin + 10, currentY + 18);
-    doc.text(`Correctness: ${correctness}`, margin + 10, currentY + 26);
+    doc.text(`Confidence: ${Number(confidence).toFixed(1)}`, margin + 10, currentY + 10);
+    doc.text(`Communication: ${Number(communication).toFixed(1)}`, margin + 10, currentY + 18);
+    doc.text(`Correctness: ${Number(correctness).toFixed(1)}`, margin + 10, currentY + 26);
     currentY += 45;
     // advice
     let advice = "";
